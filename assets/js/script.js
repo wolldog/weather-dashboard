@@ -42,6 +42,7 @@ citySearchBtn.addEventListener("click", function (event) {
       if (response.ok) {
         response.json().then(function (data) {
           console.log(data);
+          saveSearch(citySearch);
           let forecast = [data.list];
           displayCurrentWeather(data.list[0], data.city.name);
         });
@@ -76,3 +77,22 @@ citySearchBtn.addEventListener("click", function (event) {
     document.getElementById("humidityToday").textContent = humidityToday + "%";
   }
   
+  function saveSearch(city) {
+    let citySearchHistory = [];
+    let savedCitySearch = JSON.parse(localStorage.getItem("mySavedSearch"));
+    if (savedCitySearch !== null) {
+      citySearchHistory = savedCitySearch;
+    }
+  
+    var index = citySearchHistory.findIndex(function (cityHistory) {
+      return cityHistory.toLowerCase() === city.toLowerCase();
+    });
+  
+    if (index >= 0) {
+      console.log("duplicate");
+      displayForecast;
+    } else {
+      citySearchHistory.unshift(city);
+      localStorage.setItem("mySavedSearch", JSON.stringify(citySearchHistory));
+    }
+  }
