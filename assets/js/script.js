@@ -90,9 +90,26 @@ citySearchBtn.addEventListener("click", function (event) {
   
     if (index >= 0) {
       console.log("duplicate");
-      displayForecast;
     } else {
       citySearchHistory.unshift(city);
       localStorage.setItem("mySavedSearch", JSON.stringify(citySearchHistory));
+      addSearchBtn(city);
     }
+  }
+
+  function addSearchBtn(city) {
+    var searchButtonList = document.querySelector("#searchButtonList");
+    var buttonEl = document.createElement("button");
+  
+    buttonEl.textContent = city.charAt(0).toUpperCase() + city.substr(1);
+    buttonEl.classList.add("btn");
+    buttonEl.classList.add("btn-primary");
+    buttonEl.setAttribute("type", "button");
+    buttonEl.setAttribute("data-search", city);
+    buttonEl.addEventListener("click", function () {
+      citySearch = this.dataset.search;
+      getCityCoordinates();
+    });
+    //Append new search button to the top of the list
+    searchButtonList.insertBefore(buttonEl, searchButtonList.firstChild);
   }
