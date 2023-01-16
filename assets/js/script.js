@@ -159,3 +159,27 @@ citySearchBtn.addEventListener("click", function (event) {
       console.log(date, iconURL, temp, wind, humidity);
     }
   }
+
+  function displaySavedSearch() {
+    const savedSearchArray =
+      JSON.parse(localStorage.getItem("mySavedSearch")) || [];
+  
+    if (savedSearchArray.length > 0) {
+      savedSearchArray.reverse().forEach(function (cityName) {
+        addSearchBtn(cityName);
+        displayLastSearch();
+      });
+    }
+  }
+  
+  function displayLastSearch() {
+    const savedSearchArray =
+      JSON.parse(localStorage.getItem("mySavedSearch")) || [];
+  
+    if (savedSearchArray.length > 0) {
+      citySearch = savedSearchArray[0];
+      getCityCoordinates();
+    }
+  }
+  
+  displaySavedSearch();
