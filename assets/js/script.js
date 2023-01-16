@@ -43,8 +43,36 @@ citySearchBtn.addEventListener("click", function (event) {
         response.json().then(function (data) {
           console.log(data);
           let forecast = [data.list];
-          
+          displayCurrentWeather(data.list[0], data.city.name);
         });
       }
     });
   }
+
+  function displayCurrentWeather(current, cityName) {
+    const iconURL = `http://openweathermap.org/img/wn/${current.weather[0].icon}.png`;
+    const dateToday = dayjs.unix(current.dt).format("DD/MM/YY");
+    const weatherIcon = document.getElementById("current-icon");
+    const tempToday = current.main.temp;
+    const windToday = current.wind.speed;
+    const humidityToday = current.main.humidity;
+  
+    // clear current weather icon
+    weatherIcon.textContent = "";
+  
+    // create img element
+    const imgEl = document.createElement("img");
+  
+    //set image source to iconURL
+    imgEl.setAttribute("src", iconURL);
+  
+    // add this icon to html element 'weatherIcon'
+    weatherIcon.appendChild(imgEl);
+  
+    document.getElementById("current").textContent =
+      cityName + " (" + dateToday + ") ";
+    document.getElementById("tempToday").textContent = tempToday + "°F";
+    document.getElementById("windToday").textContent = windToday + "MPH";
+    document.getElementById("humidityToday").textContent = humidityToday + "%";
+  }
+  
