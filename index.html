@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Weather Dashboard</title>
 </head>
-<body>
+<body class="m-2">
     <header>
         <div id="title" class="container-fluid my-auto">
             <h1 class="text-center text-white fw"> Weather Dashboard</h1>
@@ -26,6 +26,18 @@
                         <button type="submit" class="btn text-white" id="search">Search</button>
                     </div>
                 </form>
+            </div>
+            <div class="col-md-8 container-md">
+                <div id='today' class="p-2 border border-2">
+                    <h2><span id="current" ></span><span id="current-icon"></span></h2>
+                    <p> Temp: <span id='tempToday'></span></p>
+                    <p> Wind: <span id='windToday'></span></p>
+                    <p> Humidity: <span id='humidityToday'></span></p>
+                </div>
+            </div>
+
+
+
             </div>
         </div>
         
