@@ -1,0 +1,17 @@
+:root {
+    --navyblue: rgb(45, 45, 108);
+    --darkblue: rgb(32, 32, 102);
+    --midblue: rgb(46, 46, 158);
+    --lightblue: rgb(60, 60, 214);
+    --paleblue: rgb(110, 159, 231);
+    --grey: rgb(178, 183, 190);
+    
+}
+
+/* Creates color gradient effect in header by specifying two color stops and the direction of gradient. */
+
+#title {
+    background-image: linear-gradient(to right, var(--lightblue), var(--darkblue));
+    
+}
+
