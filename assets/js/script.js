@@ -44,6 +44,7 @@ citySearchBtn.addEventListener("click", function (event) {
           console.log(data);
           saveSearch(citySearch);
           let forecast = [data.list];
+          displayForecast(...forecast);
           displayCurrentWeather(data.list[0], data.city.name);
         });
       }
@@ -112,4 +113,49 @@ citySearchBtn.addEventListener("click", function (event) {
     });
     //Append new search button to the top of the list
     searchButtonList.insertBefore(buttonEl, searchButtonList.firstChild);
+  }
+
+  function displayForecast(list) {
+    const fiveDays = document.getElementById("fiveDayForecast");
+  
+    fiveDays.textContent = "";
+  
+    for (let i = 7; i < list.length; i += 8) {
+      const date = dayjs.unix(list[i].dt).format("DD/MM/YY");
+      const temp = list[i].main.temp;
+      const wind = list[i].wind.speed;
+      const humidity = list[i].main.humidity;
+      const iconURL = `http://openweathermap.org/img/wn/${list[i].weather[0].icon}.png`;
+  
+      const divColEl = document.createElement("div");
+      const divCardEl = document.createElement("div");
+      const divCardBodyEl = document.createElement("div");
+      const h3El = document.createElement("h3");
+      const paraEl1 = document.createElement("p");
+      const paraEl2 = document.createElement("p");
+      const paraEl3 = document.createElement("p");
+      const imgEl = document.createElement("img");
+  
+      divColEl.setAttribute("class", "col");
+      divCardEl.setAttribute("class", "card");
+      divCardBodyEl.setAttribute("class", "card-body text-white");
+      divCardBodyEl.setAttribute("data-index", i);
+      h3El.textContent = date;
+      imgEl.src = iconURL;
+      paraEl1.textContent = `Temp: ${temp}°F`;
+      paraEl2.textContent = `Wind: ${wind}MPH`;
+      paraEl3.textContent = `Humidity: ${humidity}%`;
+      // paraEl.setAttribute("class", "text-white lh-lg");
+  
+      fiveDays.appendChild(divColEl);
+      divColEl.appendChild(divCardEl);
+      divCardEl.appendChild(divCardBodyEl);
+      divCardBodyEl.appendChild(h3El);
+      divCardBodyEl.appendChild(imgEl);
+      divCardBodyEl.appendChild(paraEl1);
+      divCardBodyEl.appendChild(paraEl2);
+      divCardBodyEl.appendChild(paraEl3);
+  
+      console.log(date, iconURL, temp, wind, humidity);
+    }
   }

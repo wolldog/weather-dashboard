@@ -19,3 +19,7 @@
     
     background-color: var(--paleblue);
 }
+
+.card-body {
+    background-color: var(--midblue);
+}
