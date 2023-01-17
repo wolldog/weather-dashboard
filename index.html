@@ -18,6 +18,7 @@
     </header>
     <main>
         <div class="row">
+            <!-- Container for search bar and button -->
             <div class="col-md-4 container-md">
                 <form class="mb-3 pb-3 border-bottom border-dark">
                     <label for="inputSearch" class="col-form-label fw-bold fs-3">Search for a City:</label>
@@ -26,8 +27,10 @@
                         <button type="submit" class="btn text-white" id="search">Search</button>
                     </div>
                 </form>
+                <!-- Saved search button list -->
                 <div class="d-grid gap-3" id="searchButtonList"></div>
             </div>
+            <!-- Current weather conditions -->
             <div class="col-md-8 container-md">
                 <div id='today' class="p-2 border border-2">
                     <h2><span id="current" ></span><span id="current-icon"></span></h2>
@@ -35,6 +38,7 @@
                     <p> Wind: <span id='windToday'></span></p>
                     <p> Humidity: <span id='humidityToday'></span></p>
                 </div>
+            <!-- 5 day forecast title and cards -->
             <div>
                 <h3 class="my-2">5-Day Forecast:</h3>
             </div>
