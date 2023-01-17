@@ -5,6 +5,7 @@
     --lightblue: rgb(60, 60, 214);
     --paleblue: rgb(110, 159, 231);
     --grey: rgb(178, 183, 190);
+    --lightgrey: rgb(225, 229, 236);
     
 }
 
@@ -12,14 +13,46 @@
 
 #title {
     background-image: linear-gradient(to right, var(--lightblue), var(--darkblue));
-    
 }
 
 #search {
-    
     background-color: var(--paleblue);
+}
+
+#search:hover {
+background-color: var(--lightblue)
 }
 
 .card-body {
     background-color: var(--midblue);
 }
+
+.card {
+    max-width: 230px;
+    min-height: 250px;
+}
+
+.saved-search {
+    background-color: var(--grey);
+}
+
+.saved-search:hover {
+    background-color: var(--lightgrey)
+}
+
+.btn {
+    font-weight: 600
+    ;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    #today {
+        margin-top: 10px;
+    }
+}
+
+
+
+    

@@ -103,8 +103,8 @@ citySearchBtn.addEventListener("click", function (event) {
     var buttonEl = document.createElement("button");
   
     buttonEl.textContent = city.charAt(0).toUpperCase() + city.substr(1);
-    buttonEl.classList.add("btn");
-    buttonEl.classList.add("btn-primary");
+    buttonEl.setAttribute("class", "btn saved-search");
+    // buttonEl.classList.add("btn-primary");
     buttonEl.setAttribute("type", "button");
     buttonEl.setAttribute("data-search", city);
     buttonEl.addEventListener("click", function () {
