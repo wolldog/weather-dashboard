@@ -10,7 +10,7 @@ This handy dashboard enables you to search for any city in the world and retriev
 
 The application works in your browser and does not require installation.
 
-*** Insert Link ***
+[Weather Dashboard](https://wolldog.github.io/weather-or-not/)
 
 ## Usage
 
