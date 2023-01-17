@@ -22,7 +22,7 @@ Your searches will be saved between visits and the most recent search will be di
 
 ## Credits
 
-OpenWeather - for the supply of free weather API's
+OpenWeather - for the supply of free weather APIs
 
 ## License
 
