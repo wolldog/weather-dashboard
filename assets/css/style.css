@@ -9,6 +9,11 @@
     
 }
 
+body {
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 /* Creates color gradient effect in header by specifying two color stops and the direction of gradient. */
 
 #title {
@@ -43,8 +48,7 @@ background-color: var(--lightblue)
 }
 
 .btn {
-    font-weight: 600
-    ;
+    font-weight: 600;
 }
 
 
@@ -53,6 +57,7 @@ background-color: var(--lightblue)
     #today {
         margin-top: 10px;
     }
+
 }
 
 
