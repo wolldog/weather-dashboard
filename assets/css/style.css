@@ -30,6 +30,8 @@ background-color: var(--lightblue)
 .card {
     max-width: 230px;
     min-height: 250px;
+    border: 0px;
+    margin: auto;
 }
 
 .saved-search {
